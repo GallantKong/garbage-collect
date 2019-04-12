@@ -12,6 +12,7 @@ public class CMSGarbageCollect {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(":::start:::");
         // -Xmx90m -Xms90m -Xss256k -XX:NewRatio=8 -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC  -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:CMSInitiatingOccupancyFraction=90 -XX:+UseCMSInitiatingOccupancyOnly
+        // -Xmx90m -Xms90m -Xss256k -XX:NewRatio=8 -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC  -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:CMSInitiatingOccupancyFraction=90 -XX:+UseCMSInitiatingOccupancyOnly -XX:MaxTenuringThreshold=6 -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 -XX:-UseBiasedLocking
         // 90M的堆,80M老年代，10M新生代，8M Eden园，两个1M survivor区
         List<byte[]> list = new ArrayList<>();
         ygc(8, 1, list);
